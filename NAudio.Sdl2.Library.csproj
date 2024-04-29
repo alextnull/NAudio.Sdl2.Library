@@ -1,22 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+	    <TargetFramework>netstandard2.0</TargetFramework>
         <OutputType>Library</OutputType>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <AssemblyTitle>SDL2#</AssemblyTitle>
-        <AssemblyName>SDL2-CS</AssemblyName>
-        <Description>libSDL2 bindings for C#</Description>
-        <RootNamespace>SDL2</RootNamespace>
+        <AssemblyTitle>NAudio.Sdl2.Library</AssemblyTitle>
+        <AssemblyName>NAudio.Sdl2.Library</AssemblyName>
+        <Description>libSDL2 native libraries for C#</Description>
+        <RootNamespace>NAudio.Sdl2.Library</RootNamespace>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <IsTrimmable>true</IsTrimmable>
-        <EnableAOTAnalyzer>true</EnableAOTAnalyzer>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
-        <Authors>ppy Pty Ltd &amp; flibitijibibo</Authors>
-        <Title>SDL2#</Title>
-        <PackageId>ppy.SDL2-CS</PackageId>
-        <PackageProjectUrl>https://github.com/ppy/SDL2-CS</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/ppy/SDL2-CS</RepositoryUrl>
+        <Authors>ppy Pty Ltd &amp; flibitijibibo &amp; alextnull</Authors>
+        <Title>NAudio.Sdl2.Library</Title>
+        <PackageId>NAudio.Sdl2.Library</PackageId>
+        <PackageProjectUrl>https://github.com/alextnull/NAudio.Sdl2.Library</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/alextnull/NAudio.Sdl2.Library</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
