@@ -4,3 +4,4 @@ obj/
 *.userprefs
 *.suo
 *.vs
+prepare.ps1
