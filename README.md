@@ -6,7 +6,7 @@ This package contains native SDL2 libraries
 Include the package using the `PackageReference` tag or simply install using the nuget package manager
 ```xml
  <ItemGroup>
-  <PackageReference Include="NAudio.Sdl2.Library" Version="2.30.2" />
+  <PackageReference Include="NAudio.Sdl2.Library" Version="2.26.0" />
  </ItemGroup>
 ```
 ---
@@ -14,7 +14,7 @@ Include the package using the `PackageReference` tag or simply install using the
 Include the package using the `PackageReference` tag. Set `GeneratePathProperty` to `true` and `ExcludeAssets` to `all`.
 ```xml
  <ItemGroup>
-  <PackageReference Include="NAudio.Sdl2.Library" Version="2.30.2" GeneratePathProperty="true" ExcludeAssets="all"/>
+  <PackageReference Include="NAudio.Sdl2.Library" Version="2.26.0" GeneratePathProperty="true" ExcludeAssets="all"/>
  </ItemGroup>
 ```
 ---
