@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
 	    <TargetFramework>netstandard2.0</TargetFramework>
         <OutputType>Library</OutputType>
@@ -8,6 +8,7 @@
         <Description>libSDL2 native libraries for C#</Description>
         <RootNamespace>NAudio.Sdl2.Library</RootNamespace>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	    <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
         <Authors>ppy Pty Ltd &amp; flibitijibibo &amp; alextnull</Authors>
@@ -17,7 +18,8 @@
         <RepositoryUrl>https://github.com/alextnull/NAudio.Sdl2.Library</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
+	    <None Include="README.md" Pack="true" PackagePath="\"/>
+		<Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <PackagePath>runtimes/win-x64/native</PackagePath>
             <Pack>true</Pack>
