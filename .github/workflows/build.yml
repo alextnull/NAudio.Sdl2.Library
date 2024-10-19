@@ -79,7 +79,7 @@ jobs:
   make-pr:
     name: Submit pull request
     runs-on: ubuntu-latest
-    needs: [ build, build-ios, build-android ]
+    needs: [ build-android ]
     steps:
       - uses: actions/checkout@v4
 
