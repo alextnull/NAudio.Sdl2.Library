@@ -158,6 +158,9 @@ jobs:
       PLATFORM_VER: android-34
     steps:
       - uses: actions/checkout@v4
+       with:
+        repository: 'libsdl-org/SDL'
+        ref: 'SDL2'     
         with:
           submodules: true
 
