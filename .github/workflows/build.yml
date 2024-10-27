@@ -27,7 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true
+          repository: 'libsdl-org/SDL'
+          ref: 'SDL2'
 
       - name: Set up QEMU
         if: contains(matrix.platform.container, 'arm')
@@ -87,7 +88,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true
+          repository: 'libsdl-org/SDL'
+          ref: 'SDL2'
 
       - name: Build (iOS)
         run: xcodebuild -project Xcode/SDL/SDL.xcodeproj -target SDL2.xcframework -configuration Release
@@ -124,7 +126,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true
+          repository: 'libsdl-org/SDL'
+          ref: 'SDL2'
 
       - name: Setup JDK
         uses: actions/setup-java@v4
