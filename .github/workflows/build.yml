@@ -78,7 +78,7 @@ jobs:
         ref: 'SDL2'
     - uses: actions/checkout@v4
       with:
-        path: 'NAudio-Sdl2-Library'
+        path: 'NAudio-Sdl2-Library/NAudio-Sdl2-Library'
     - name: Configure CMake
       run:  ${{ matrix.platform.cmake_configure_env }} cmake -B build ${{ matrix.platform.flags }} -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DSDL_SHARED_ENABLED_BY_DEFAULT=ON -DSDL_STATIC_ENABLED_BY_DEFAULT=ON
     - name: Build
@@ -111,7 +111,7 @@ jobs:
         title: Update ${{ matrix.platform.name }} SDL binaries
         body: This PR has been auto-generated to update the ${{ matrix.platform.name }} SDL binaries.
         branch: update-${{ matrix.platform.name }}-binaries
-        path: 'NAudio-Sdl2-Library'
+        path: 'NAudio-Sdl2-Library/NAudio-Sdl2-Library'
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
@@ -125,7 +125,7 @@ jobs:
         ref: 'SDL2'
     - uses: actions/checkout@v4
       with:
-        path: 'NAudio-Sdl2-Library'
+        path: 'NAudio-Sdl2-Library/NAudio-Sdl2-Library'
     - name: Build (iOS)
       run: xcodebuild -project Xcode/SDL/SDL.xcodeproj -scheme xcFramework-iOS -configuration Release
     - name: Prepare release directory (iOS)
@@ -146,6 +146,6 @@ jobs:
         title: Update iOS SDL binaries
         body: This PR has been auto-genereated to update the iOS SDL binaries
         branch: update-ios-binaries
-        path: 'NAudio-Sdl2-Library'
+        path: 'NAudio-Sdl2-Library/NAudio-Sdl2-Library'
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
