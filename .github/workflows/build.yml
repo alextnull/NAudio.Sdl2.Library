@@ -73,7 +73,8 @@ jobs:
         # Build SDL2 Android Java part
         cd android-project/app/src/main/java
         javac -cp $ANDROID_HOME/platforms/$PLATFORM_VER/android.jar -encoding utf8 org/libsdl/app/*.java
-        jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class     
+        jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class
+        cd ./android-project
         
     - name: Prepare release directory (android java)
       run: mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android
