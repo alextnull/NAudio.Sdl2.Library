@@ -18,7 +18,6 @@
         <RepositoryUrl>https://github.com/alextnull/NAudio.Sdl2.Library</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-	    <None Include="README.md" Pack="true" PackagePath="\"/>
 		<Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <PackagePath>runtimes/win-x64/native</PackagePath>
