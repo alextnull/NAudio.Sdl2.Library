@@ -49,6 +49,19 @@ jobs:
         # Build SDL2
         sed -i 's/abi=.*/abi="armeabi-v7a arm64-v8a x86 x86_64"/g' build-scripts/androidbuildlibs.sh
         build-scripts/androidbuildlibs.sh NDK_LIBS_OUT="$OUTPUT"
+        
+    - name: Prepare release directory (android)
+      run: mkdir -p NAudio-Sdl2-Library-Android/NAudio-Sdl2-Library-Android/NAudio.Sdl2.Library.Library/native/android
+    - name: Prepare release (android)
+      run: |
+        mkdir -p NAudio-Sdl2-Library-Android/NAudio.Sdl2.Library.Library/native/android/arm64-v8a;
+        mkdir -p NAudio-Sdl2-Library-Android/NAudio.Sdl2.Library.Library/native/android/armeabi-v7a;
+        mkdir -p NAudio-Sdl2-Library-Android/NAudio.Sdl2.Library.Library/native/android/x86;
+        mkdir -p NAudio-Sdl2-Library-Android/NAudio.Sdl2.Library.Library/native/android/x86_64;
+        cp NAudio-Sdl2-Library-Android/native/android/arm64-v8a/libSDL2.so   NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/arm64-v8a/libSDL2.so;
+        cp NAudio-Sdl2-Library-Android/native/android/armeabi-v7a/libSDL2.so NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/armeabi-v7a/libSDL2.so;
+        cp NAudio-Sdl2-Library-Android/native/android/x86/libSDL2.so         NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/x86/libSDL2.so;
+        cp NAudio-Sdl2-Library-Android/native/android/x86_64/libSDL2.so      NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/x86_64/libSDL2.so;
 
     - name: Build SDL2 Android Java
       run: |
@@ -60,45 +73,7 @@ jobs:
         # Build SDL2 Android Java part
         cd android-project/app/src/main/java
         javac -cp $ANDROID_HOME/platforms/$PLATFORM_VER/android.jar -encoding utf8 org/libsdl/app/*.java
-        jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class
-
-    - name: Compress native directory
-      run: tar -cf native-android.tar native/android
-
-    - name: Upload native artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: native-android
-        path: native-android.tar
-        if-no-files-found: error
-
-    - name: Upload JAR artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: android-jar
-        path: NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar
-        if-no-files-found: error
-        
-    #- uses: actions/checkout@v4
-    - name: Download native artifacts
-      uses: actions/download-artifact@v4
-      with:
-        pattern: native-*
-        merge-multiple: true
-
-    - name: Decompress native artifacts
-      run: |
-        for file in native-*.tar
-        do
-          tar -xf "$file"
-        done
-        rm native-*.tar
-
-    - name: Download JAR artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: android-jar
-        path: NAudio.Sdl2.Library.Android/Jars/
+        jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class     
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
       with:
