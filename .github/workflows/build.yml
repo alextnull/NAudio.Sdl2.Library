@@ -219,6 +219,27 @@ jobs:
         name: android-jar
         path: NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar
         if-no-files-found: error
+        
+    - uses: actions/checkout@v4
+    - name: Download native artifacts
+      uses: actions/download-artifact@v4
+      with:
+        pattern: native-*
+        merge-multiple: true
+
+    - name: Decompress native artifacts
+      run: |
+        for file in native-*.tar
+        do
+          tar -xf "$file"
+        done
+        rm native-*.tar
+
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: android-jar
+        path: NAudio.Sdl2.Library.Android/Jars/
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
       with:
