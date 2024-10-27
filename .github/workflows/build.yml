@@ -162,7 +162,7 @@ jobs:
         ref: 'SDL2'
     - uses: actions/checkout@v4
       with:
-        path: 'NAudio-Sdl2-Library.Android'
+        path: 'NAudio.Sdl2.Library.Android'
     - name: Setup JDK
       uses: actions/setup-java@v4
       with:
@@ -217,7 +217,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: android-jar
-        path: NAudio-Sdl2-Library.Android/Jars/SDL2AndroidBridge.jar
+        path: NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar
         if-no-files-found: error
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
