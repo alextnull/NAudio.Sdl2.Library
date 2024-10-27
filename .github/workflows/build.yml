@@ -162,7 +162,7 @@ jobs:
         ref: 'SDL2'
     - uses: actions/checkout@v4
       with:
-        path: 'NAudio.Sdl2.Library.Android'
+        path: 'NAudio-Sdl2-Library-Android'
     - name: Setup JDK
       uses: actions/setup-java@v4
       with:
@@ -195,7 +195,7 @@ jobs:
       run: |
         export JAVA_HOME=$JAVA_HOME_11_X64
         export PATH=$JAVA_HOME_11_X64/bin:$PATH
-        export OUTPUT=$PWD/NAudio.Sdl2.Library/Jars/
+        export OUTPUT=$PWD/NAudio.Sdl2.Library.Android/Jars/
         rm -rf $OUTPUT && mkdir -p $OUTPUT
 
         # Build SDL2 Android Java part
@@ -226,6 +226,6 @@ jobs:
         title: Update android SDL binaries
         body: This PR has been auto-genereated to update the android SDL binaries
         branch: update-android-binaries
-        path: 'NAudio.Sdl2.Library.Android'
+        path: 'NAudio-Sdl2-Library-Android'
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
