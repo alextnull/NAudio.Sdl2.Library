@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NAudio.Sdl2.Library", "NAudio.Sdl2.Library\NAudio.Sdl2.Library.csproj", "{9653B0F5-4879-4F0D-A8FE-FF03D72061D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudio.Sdl2.Library.Android", "NAudio.Sdl2.Library.Android\NAudio.Sdl2.Library.Android.csproj", "{A68C98AE-0A82-497D-A09D-A25F00F90597}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9653B0F5-4879-4F0D-A8FE-FF03D72061D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9653B0F5-4879-4F0D-A8FE-FF03D72061D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9653B0F5-4879-4F0D-A8FE-FF03D72061D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68C98AE-0A82-497D-A09D-A25F00F90597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68C98AE-0A82-497D-A09D-A25F00F90597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68C98AE-0A82-497D-A09D-A25F00F90597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68C98AE-0A82-497D-A09D-A25F00F90597}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
