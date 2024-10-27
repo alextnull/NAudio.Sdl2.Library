@@ -162,6 +162,9 @@ jobs:
       with:
         repository: 'libsdl-org/SDL'
         ref: 'SDL2'
+    - uses: actions/checkout@v4
+      with:
+        path: 'NAudio-Sdl2-Library'
     - name: Setup JDK
       uses: actions/setup-java@v4
       with:
