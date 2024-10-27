@@ -80,7 +80,7 @@ jobs:
       run: |
         mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars;
         cp NAudio-Sdl2-Library/Jars/SDL2AndroidBridge.jar  NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar;
-        
+        rm -rf NAudio-Sdl2-Library/Jars;
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
       with:
