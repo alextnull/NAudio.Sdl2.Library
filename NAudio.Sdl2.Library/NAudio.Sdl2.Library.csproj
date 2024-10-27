@@ -17,68 +17,64 @@
         <PackageProjectUrl>https://github.com/alextnull/NAudio.Sdl2.Library</PackageProjectUrl>
         <RepositoryUrl>https://github.com/alextnull/NAudio.Sdl2.Library</RepositoryUrl>
     </PropertyGroup>
-    <ItemGroup>
-		<Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/win-x64/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\win-arm64\SDL2.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/win-arm64/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\win-x86\SDL2.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/win-x86/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\osx-x64\libSDL2.dylib">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/osx-x64/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\osx-arm64\libSDL2.dylib">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/osx-arm64/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\linux-x64\libSDL2.so">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/linux-x64/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\linux-x86\libSDL2.so">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/linux-x86/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-        <Content Include="$(MSBuildThisFileDirectory)native\ios\**\*">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <PackagePath>runtimes/ios/native</PackagePath>
-            <Pack>true</Pack>
-        </Content>
-		<Content Include="$(MSBuildThisFileDirectory)native\android\armeabi-v7a\libSDL2.so">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)..\native\win-x64\SDL2.dll" LinkBase="native\win-x64">
+			<PackagePath>runtimes/win-x64/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\win-arm64\SDL2.dll" LinkBase="native\win-arm64">
+			<PackagePath>runtimes/win-arm64/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\win-x86\SDL2.dll" LinkBase="native\win-x86">
+			<PackagePath>runtimes/win-x86/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\osx-x64\libSDL2.dylib" LinkBase="native\osx-x64">
+			<PackagePath>runtimes/osx-x64/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\osx-arm64\libSDL2.dylib" LinkBase="native\osx-arm64">
+			<PackagePath>runtimes/osx-arm64/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\linux-x64\libSDL2.so" LinkBase="native\linux-x64">
+			<PackagePath>runtimes/linux-x64/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\linux-x86\libSDL2.so" LinkBase="native\linux-x86">
+			<PackagePath>runtimes/linux-x86/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\linux-arm64\libSDL2.so" LinkBase="native\linux-arm64">
+			<PackagePath>runtimes/linux-arm64/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\linux-arm\libSDL2.so" LinkBase="native\linux-arm">
+			<PackagePath>runtimes/linux-arm/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\ios\**\*" LinkBase="native\ios">
+			<PackagePath>runtimes/ios/native</PackagePath>
+			<Pack>true</Pack>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\android\armeabi-v7a\libSDL2.so" LinkBase="native\android\armeabi-v7a">
 			<PackagePath>runtimes/android-arm/native</PackagePath>
 			<Pack>true</Pack>
-		</Content>
-		<Content Include="$(MSBuildThisFileDirectory)native\android\arm64-v8a\libSDL2.so">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\android\arm64-v8a\libSDL2.so" LinkBase="native\android\arm64-v8a">
 			<PackagePath>runtimes/android-arm64/native</PackagePath>
 			<Pack>true</Pack>
-		</Content>
-		<Content Include="$(MSBuildThisFileDirectory)native\android\x86_64\libSDL2.so">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\android\x86_64\libSDL2.so" LinkBase="native\android\x86_64">
 			<PackagePath>runtimes/android-x64/native</PackagePath>
 			<Pack>true</Pack>
-		</Content>
-		<Content Include="$(MSBuildThisFileDirectory)native\android\x86\libSDL2.so">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)..\native\android\x86\libSDL2.so" LinkBase="native\android\x86">
 			<PackagePath>runtimes/android-x86/native</PackagePath>
 			<Pack>true</Pack>
-		</Content>
-    </ItemGroup>
+		</None>
+	</ItemGroup>
     <ItemGroup>
         <Content Include="app.config">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
