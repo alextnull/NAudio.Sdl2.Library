@@ -75,12 +75,12 @@ jobs:
         javac -cp $ANDROID_HOME/platforms/$PLATFORM_VER/android.jar -encoding utf8 org/libsdl/app/*.java
         jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class     
         
-    - name: Prepare release directory (android java)
-      run: mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android
-    - name: Prepare release (android java)
-      run: |
-        mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars;
-        cp NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar  NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar;
+    # - name: Prepare release directory (android java)
+      # run: mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android
+    # - name: Prepare release (android java)
+      # run: |
+        # mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars;
+        # cp NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar  NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar;
         
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
