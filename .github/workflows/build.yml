@@ -63,17 +63,25 @@ jobs:
         cp NAudio-Sdl2-Library/native/android/x86/libSDL2.so         NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/x86/libSDL2.so;
         cp NAudio-Sdl2-Library/native/android/x86_64/libSDL2.so      NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/x86_64/libSDL2.so;
 
-    # - name: Build SDL2 Android Java
-      # run: |
-        # export JAVA_HOME=$JAVA_HOME_11_X64
-        # export PATH=$JAVA_HOME_11_X64/bin:$PATH
-        # export OUTPUT=$PWD/NAudio.Sdl2.Library.Android/Jars/
-        # rm -rf $OUTPUT && mkdir -p $OUTPUT
+    - name: Build SDL2 Android Java
+      run: |
+        export JAVA_HOME=$JAVA_HOME_11_X64
+        export PATH=$JAVA_HOME_11_X64/bin:$PATH
+        export OUTPUT=$PWD/NAudio.Sdl2.Library.Android/Jars/
+        rm -rf $OUTPUT && mkdir -p $OUTPUT
 
-        # # Build SDL2 Android Java part
-        # cd android-project/app/src/main/java
-        # javac -cp $ANDROID_HOME/platforms/$PLATFORM_VER/android.jar -encoding utf8 org/libsdl/app/*.java
-        # jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class     
+        # Build SDL2 Android Java part
+        cd android-project/app/src/main/java
+        javac -cp $ANDROID_HOME/platforms/$PLATFORM_VER/android.jar -encoding utf8 org/libsdl/app/*.java
+        jar cvf $OUTPUT/SDL2AndroidBridge.jar org/libsdl/app/*.class     
+        
+    - name: Prepare release directory (android java)
+      run: mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android
+    - name: Prepare release (android java)
+      run: |
+        mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars;
+        cp NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar  NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar;
+        
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
       with:
