@@ -195,7 +195,7 @@ jobs:
       run: |
         export JAVA_HOME=$JAVA_HOME_11_X64
         export PATH=$JAVA_HOME_11_X64/bin:$PATH
-        export OUTPUT=$PWD/NAudio-Sdl2-Library-Android/Jars/
+        export OUTPUT=$PWD/NAudio.Sdl2.Library.Android/Jars/
         rm -rf $OUTPUT && mkdir -p $OUTPUT
 
         # Build SDL2 Android Java part
@@ -217,7 +217,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: android-jar
-        path: NAudio-Sdl2-Library-Android/Jars/SDL2AndroidBridge.jar
+        path: NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar
         if-no-files-found: error
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
