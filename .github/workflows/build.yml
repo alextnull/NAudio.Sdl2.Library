@@ -195,7 +195,7 @@ jobs:
       run: |
         export JAVA_HOME=$JAVA_HOME_11_X64
         export PATH=$JAVA_HOME_11_X64/bin:$PATH
-        export OUTPUT=$PWD/NAudio.Sdl2.Library/Jars/
+        export OUTPUT=$PWD/NAudio-Sdl2-Library-Android/Jars/
         rm -rf $OUTPUT && mkdir -p $OUTPUT
 
         # Build SDL2 Android Java part
