@@ -90,19 +90,19 @@ jobs:
       run: sudo cmake --install build/ --prefix install_output --config Release
       if: runner.os != 'Windows'
     - name: Prepare release directory (Windows)
-      run: mkdir -Force NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/${{ matrix.platform.name }}
+      run: mkdir -Force NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/${{ matrix.platform.name }}
       if: runner.os == 'Windows'
     - name: Prepare release directory
-      run: mkdir -p NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/${{ matrix.platform.name }}
+      run: mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/${{ matrix.platform.name }}
       if: runner.os != 'Windows'
     - name: Prepare release (Windows)
-      run: cp install_output/bin/SDL2.dll NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/${{ matrix.platform.name }}/SDL2.dll
+      run: cp install_output/bin/SDL2.dll NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/${{ matrix.platform.name }}/SDL2.dll
       if: runner.os == 'Windows'
     - name: Prepare release (Linux)
-      run: cp install_output/lib/libSDL2-2.0.so.0 NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/${{ matrix.platform.name }}/libSDL2.so
+      run: cp install_output/lib/libSDL2-2.0.so.0 NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/${{ matrix.platform.name }}/libSDL2.so
       if: runner.os == 'Linux'
     - name: Prepare release (macOS)
-      run: cp install_output/lib/libSDL2-2.0.dylib NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/${{ matrix.platform.name }}/libSDL2.dylib
+      run: cp install_output/lib/libSDL2-2.0.dylib NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/${{ matrix.platform.name }}/libSDL2.dylib
       if: runner.os == 'macOS'
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
@@ -129,16 +129,16 @@ jobs:
     - name: Build (iOS)
       run: xcodebuild -project Xcode/SDL/SDL.xcodeproj -scheme xcFramework-iOS -configuration Release
     - name: Prepare release directory (iOS)
-      run: mkdir -p NAudio-Sdl2-Library/NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios
+      run: mkdir -p NAudio-Sdl2-Library/NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios
     - name: Prepare release (iOS)
       run: |
-        mkdir -p NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/ios-arm64/SDL2.framework;
-        mkdir -p NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework;
-        cp Xcode/SDL/Products/SDL2.xcframework/Info.plist                                           NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/Info.plist;
-        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64/SDL2.framework/SDL2                        NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/ios-arm64/SDL2.framework/SDL2;
-        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64/SDL2.framework/Info.plist                  NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/ios-arm64/SDL2.framework/Info.plist;
-        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/SDL2       NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/SDL2;
-        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/Info.plist NAudio-Sdl2-Library/NAudio-Sdl2-Library/native/ios/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/Info.plist;
+        mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/ios-arm64/SDL2.framework;
+        mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework;
+        cp Xcode/SDL/Products/SDL2.xcframework/Info.plist                                           NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/Info.plist;
+        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64/SDL2.framework/SDL2                        NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/ios-arm64/SDL2.framework/SDL2;
+        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64/SDL2.framework/Info.plist                  NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/ios-arm64/SDL2.framework/Info.plist;
+        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/SDL2       NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/SDL2;
+        cp Xcode/SDL/Products/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/Info.plist NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/ios/SDL2.xcframework/ios-arm64_x86_64-simulator/SDL2.framework/Info.plist;
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
       with:
