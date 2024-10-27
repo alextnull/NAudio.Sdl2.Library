@@ -75,7 +75,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         repository: 'libsdl-org/SDL'
-        ref: 'SDL2'
+        ref: 'SDL2-2.30.5'
     - uses: actions/checkout@v4
       with:
         path: 'NAudio-Sdl2-Library'
@@ -122,7 +122,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         repository: 'libsdl-org/SDL'
-        ref: 'SDL2'
+        ref: 'SDL2-2.30.5'
     - uses: actions/checkout@v4
       with:
         path: 'NAudio-Sdl2-Library'
@@ -159,7 +159,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         repository: 'libsdl-org/SDL'
-        ref: 'SDL2'
+        ref: 'SDL2-2.30.5'
     - uses: actions/checkout@v4
       with:
         path: 'NAudio-Sdl2-Library-Android'
