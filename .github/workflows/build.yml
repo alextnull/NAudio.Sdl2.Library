@@ -67,7 +67,7 @@ jobs:
       run: |
         export JAVA_HOME=$JAVA_HOME_11_X64
         export PATH=$JAVA_HOME_11_X64/bin:$PATH
-        export OUTPUT=$PWD/jars
+        export OUTPUT=$PWD/Jars/
         rm -rf $OUTPUT && mkdir -p $OUTPUT
 
         # Build SDL2 Android Java part
@@ -80,7 +80,7 @@ jobs:
     - name: Prepare release (android java)
       run: |
         mkdir -p NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars;
-        cp NAudio-Sdl2-Library/jars/SDL2AndroidBridge.jar  NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar;
+        cp NAudio-Sdl2-Library/Jars/SDL2AndroidBridge.jar  NAudio-Sdl2-Library/NAudio.Sdl2.Library.Android/Jars/SDL2AndroidBridge.jar;
         
     - name: Create pull request
       uses: peter-evans/create-pull-request@v6
