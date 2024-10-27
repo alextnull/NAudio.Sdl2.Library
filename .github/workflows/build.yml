@@ -184,7 +184,7 @@ jobs:
     - name: Build (Android)
       run: |
         export PATH=$ANDROID_HOME/ndk/$NDK_VER:$PATH
-        export OUTPUT=$PWD/native/android
+        export OUTPUT=NAudio-Sdl2-Library/native/android
         rm -rf $OUTPUT && mkdir -p $OUTPUT
 
         # Build SDL2
@@ -203,6 +203,7 @@ jobs:
         cp NAudio-Sdl2-Library/native/android/armeabi-v7a/libSDL2.so NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/armeabi-v7a/libSDL2.so;
         cp NAudio-Sdl2-Library/native/android/x86/libSDL2.so         NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/x86/libSDL2.so;
         cp NAudio-Sdl2-Library/native/android/x86_64/libSDL2.so      NAudio-Sdl2-Library/NAudio.Sdl2.Library/native/android/x86_64/libSDL2.so;
+        rm -rf NAudio-Sdl2-Library/native/android;
 
     - name: Build SDL2 Android Java
       run: |
