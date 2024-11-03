@@ -16,6 +16,9 @@
 		<PackageId>NAudio.Sdl2.Library</PackageId>
 		<PackageProjectUrl>https://github.com/alextnull/NAudio.Sdl2.Library</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/alextnull/NAudio.Sdl2.Library</RepositoryUrl>
+		<AssemblyVersion>2.30.3</AssemblyVersion>
+		<FileVersion>2.30.3</FileVersion>
+		<Version>2.30.3</Version>
 	</PropertyGroup>
 	<ItemGroup>
 		<Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
