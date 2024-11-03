@@ -8,7 +8,6 @@
 		<Description>libSDL2 native libraries for C#</Description>
 		<RootNamespace>NAudio.Sdl2.Library</RootNamespace>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<PropertyGroup Label="NuGet">
 		<Authors>ppy Pty Ltd &amp; flibitijibibo &amp; alextnull</Authors>
@@ -86,5 +85,9 @@
 		<Content Include="app.config">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 </Project>
